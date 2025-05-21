@@ -1,0 +1,20 @@
+<script type="text/javascript">
+    
+var celsius = prompt("Enter temperature in degrees Celsius:");
+
+
+celsius = parseFloat(celsius);
+
+
+if (!isNaN(celsius)) {
+    
+    var fahrenheit = (celsius * 9/5) + 32;
+
+    
+    alert(`${celsius}°C is equal to ${fahrenheit.toFixed(2)}°F`);
+} else {
+    
+    alert("Invalid input. Please enter a numeric value.");
+}
+
+</script>

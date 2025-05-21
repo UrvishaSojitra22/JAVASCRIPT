@@ -1,0 +1,49 @@
+<h1 id="swap"></h1>
+<h1 id="swap1"></h1>
+<h1 id="swap2"></h1>
+<h1 id="swap3"></h1>
+
+<script type="text/javascript">
+
+  var a = parseInt(prompt("Enter value for a:"));
+  var b = parseInt(prompt("Enter value for b:"));
+  var temp;
+
+
+console.log(`before swapping: a = ${a}  b = ${b}`);
+temp = a;
+a=b;
+b=temp;
+console.log(`after swapping: a = ${a}  b = ${b}`);
+
+
+
+document.writeln(`before swapping: a = ${a}  b = ${b}`);
+document.writeln("<br>")
+temp = a;
+a=b;
+b=temp;
+document.writeln("<br>")
+document.writeln(`after swapping: a = ${a}  b = ${b}`);
+
+
+
+
+document.getElementById('swap').innerHTML = `before swapping: a = ${a}&nbsp &nbsp b = ${b}`;
+temp = a;
+a=b;
+b=temp;
+document.getElementById('swap2').innerHTML = `After swapping: a = ${a}&nbsp &nbspb = ${b}`;
+
+  
+
+
+
+alert(`before swapping a = ${a} b = ${b}`);
+temp = a;
+a=b;
+b=temp
+alert(`After swapping a = ${a} b = ${b}`);
+
+
+</script>

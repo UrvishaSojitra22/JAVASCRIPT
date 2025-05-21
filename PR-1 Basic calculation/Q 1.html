@@ -1,0 +1,23 @@
+
+    <script>
+        
+        var num1 = parseFloat(prompt("Enter the first number:"));
+        var num2 = parseFloat(prompt("Enter the second number:"));
+
+        
+        if (isNaN(num1) || isNaN(num2)) {
+            alert("Invalid input. Please enter valid numbers.");
+        } else {
+            var subtraction = num1 - num2;
+            var multiplication = num1 * num2;
+            var addition = num1 + num2;
+            var division = num2 !== 0 ? num1 / num2 : "Cannot divide by zero";
+
+            
+            alert(`Results:
+Addition: ${addition}
+Subtraction: ${subtraction}
+Multiplication: ${multiplication}
+Division: ${division}`);
+        }
+    </script>

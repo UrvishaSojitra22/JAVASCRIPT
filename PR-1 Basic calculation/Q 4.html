@@ -1,0 +1,25 @@
+<script type="text/javascript">
+    
+var baseSalary = prompt("Enter base salary (in Rs):");
+
+
+baseSalary = parseFloat(baseSalary);
+
+
+if (!isNaN(baseSalary)) {
+    
+    var hra = baseSalary * 0.10;  
+    var da = baseSalary * 0.05;   
+    var ta = baseSalary * 0.08;   
+
+    
+    var grossSalary = baseSalary + hra + da + ta;
+
+    
+    alert(`Gross Salary is Rs. ${grossSalary.toFixed(2)}`);
+} else {
+    
+    alert("Invalid input. Please enter a numeric value.");
+}
+
+</script>

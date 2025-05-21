@@ -1,0 +1,28 @@
+<script type="text/javascript">
+    
+var principal = prompt("Enter the principal amount (P):");
+
+
+var rate = prompt("Enter the rate of interest (R):");
+
+
+var time = prompt("Enter the time period in years (T):");
+
+
+principal = parseFloat(principal);
+rate = parseFloat(rate);
+time = parseFloat(time);
+
+
+if (!isNaN(principal) && principal > 0 && !isNaN(rate) && rate > 0 && !isNaN(time) && time > 0) {
+    
+    var interest = (principal * rate * time) / 100;
+
+    
+    alert(`The interest is Rs. ${interest.toFixed(2)}`);
+} else {
+    
+    alert("Invalid input. Please enter positive numeric values for principal, rate, and time.");
+}
+
+</script>
