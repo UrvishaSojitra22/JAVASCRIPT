@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade System</title>
+</head>
+
+<body>
+    <script>
+
+        let marks = parseInt(prompt("Enter Your Marks"));
+
+        if (marks >= 91 && marks <= 100) {
+            document.writeln("<h2>A+</h2>");
+        }
+        else if (marks >= 81 && marks <= 90) {
+            document.writeln("<h2>A</h2>");
+        }
+        else if (marks >= 71 && marks <= 80) {
+            document.writeln("<h2>B+</h2>");
+        }
+        else if (marks >= 61 && marks <= 70) {
+            document.writeln("<h2>B</h2>");
+        }
+        else if (marks >= 51 && marks <= 60) {
+            document.writeln("<h2>C+</h2>");
+        }
+        else if (marks >= 41 && marks <= 50) {
+            document.writeln("<h2>C</h2>");
+        }
+        else {
+            document.writeln("<h2>Fail</h2>")
+        }
+
+    </script>
+</body>
+
+</html>

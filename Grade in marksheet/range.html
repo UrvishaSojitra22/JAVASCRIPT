@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Interest</title>
+</head>
+
+<body>
+    <script>
+
+        let amount = parseInt(prompt("Enter yout amount "));
+        let interest
+
+        if (amount <= 1000) {
+            interest = amount * 2 / 100;
+            document.writeln(`<h2> Your interest is ${interest}</h2>`)
+        }
+        else if (amount <= 5000) {
+            interest = amount * 3 / 100;
+            document.writeln(`<h2> Your interest is ${interest}</h2>`)
+        }
+        else if (amount < 10000) {
+            interest = amount * 4 / 100;
+            document.writeln(`<h2> Your interest is ${interest}</h2>`)
+        }
+        else {
+            interest = amount * 5 / 100;
+            document.writeln(`<h2> Your interest is ${interest}</h2>`)
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electricity Bill</title>
+</head>
+
+<body>
+    <script>
+
+        let Units = parseInt(prompt("Enter your Units "));
+        let bill;
+
+        if (Units >= 0 && Units <= 100) {
+            bill = Units * 5;
+            document.writeln(`<h2> You Bill is ${bill}</h2>`);
+        }
+        else if (Units >= 101 && Units <= 200) {
+            bill = 100 * 5 + (Units - 100) * 7;
+            document.writeln(`<h2> You Bill is ${bill}</h2>`);
+        }
+        else if (Units >= 201 && Units <= 300) {
+            bill = 100 * 5 + 100 * 7(Units - 200) * 10;
+            document.writeln(`<h2> You Bill is ${bill}</h2>`);
+        }
+        else {
+            bill = 100 * 5 + 100 * 7 + 100 * 10(Units - 300) * 12;
+            document.writeln(`<h2> You Bill is ${bill}</h2>`);
+        }
+
+
+    </script>
+</body>
+
+</html>
