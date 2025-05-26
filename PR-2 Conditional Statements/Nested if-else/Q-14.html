@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Income Tax Based on Salary</title>
+</head>
+
+<body>
+    <script>
+        let Salary = parseInt(prompt("Enter your Units "));
+        let tex;
+
+        if (Salary >= 0 && Salary <= 20000) {
+            document.writeln(`<h2> You have no need to pay tex </h2>`);
+        } else if (Salary >= 20000 && Salary <= 60000) {
+            let tex = Salary * 5 / 100;
+            document.writeln(`<h2> Your tex are  ${tex}</h2>`);
+        } else if (Salary >= 60000 && Salary <= 80000) {
+            let tex = Salary * 10 / 100;
+            document.writeln(`<h2> Your tex are  ${tex}</h2>`);
+        }else if (Salary >= 80000 && Salary <= 100000) {
+            let tex = Salary * 15 / 100;
+            document.writeln(`<h2> Your tex are  ${tex}</h2>`);
+        }else if (Salary >= 100000 && Salary <= 150000) {
+            let tex = Salary * 20 / 100;
+            document.writeln(`<h2> Your tex are  ${tex}</h2>`);
+        }else if (Salary >= 150000 && Salary <= 200000) {
+            let tex = Salary * 25 / 100;
+            document.writeln(`<h2> Your tex are  ${tex}</h2>`);
+        }else{
+             let tex = Salary * 30 / 100;
+            document.writeln(`<h2> Your tex are  ${tex}</h2>`);
+        }
+
+    </script>
+</body>
+
+</html>

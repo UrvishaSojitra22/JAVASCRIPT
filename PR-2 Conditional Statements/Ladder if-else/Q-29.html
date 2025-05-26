@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Determine mobile plan based on data usage</title>
+</head>
+
+<body>
+    <script>
+        let dataUsage = parseInt(prompt("Enter Datause:-"));
+
+        if (dataUsage <= 2) {
+            document.writeln(`<h2>Basic Plan: 2GB for $10</h2>`)
+        } else if (dataUsage <= 5) {
+            document.writeln(`<h2>Standard Plan: 5GB for $20</h2>`)
+        } else if (dataUsage <= 10) {
+            document.writeln(`<h2>Premium Plan: 10GB for $30</h2>`)
+        } else {
+            document.writeln(`<h2>Unlimited Plan: Unlimited data for $50</h2>`)
+        }
+
+    </script>
+
+</body>
+
+</html>

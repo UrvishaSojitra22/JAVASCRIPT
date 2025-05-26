@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classify earthquake magnitude (minor, light, moderate, major)</title>
+</head>
+<body>
+    <script>
+        let magnitude = parseFloat(prompt("Enter your   magnitude :- "));
+
+        if(  magnitude>3.0 &&   magnitude<=3.9){
+            document.writeln(`<h2>minor magnitude</h2>`);
+        }else if(magnitude>=4.0&&   magnitude<=4.9){
+            document.writeln(`<h2>Light  magnitude </h2>`)
+        }else if (  magnitude>=5.0 && magnitude<=5.9){
+            document.writeln(`<h2>Moderete magnitude </h2>`)
+        }else if(magnitude>=6.0 && magnitude<=6.9){
+            document.writeln(`<h2>Strong magnitude </h2>`)
+        }else if(magnitude>=7.0 && magnitude<=7.9){
+            document.writeln(`<h2>magor magnitude </h2>`)
+        }else{
+            document.writeln(`<h2>Great magnitude </h2>`)
+        }
+        
+    </script>
+</body>
+</html>

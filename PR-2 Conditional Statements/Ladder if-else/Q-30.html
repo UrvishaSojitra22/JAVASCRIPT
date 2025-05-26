@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classify athlete performance based on race time</title>
+</head>
+<body>
+    <script>
+        let time = parseInt(prompt("Enter your race  time in minit :- ")) 
+
+        if(time<=30){
+            document.writeln(`<h1>Your performance is Excellent</h1>`);
+        }else if(time<=45){
+            document.writeln(`<h1> Your performance is Good</h1>`);
+        }else if(time<=60){
+            document.writeln(`<h1>Your performance is Average</h1>`);
+        }else{
+             document.writeln(`<h1>Your performance is Needs Improvement</h1>`);
+        }
+    </script>
+</body>
+</html>

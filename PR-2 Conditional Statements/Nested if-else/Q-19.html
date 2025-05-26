@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number  Range and  Even</title>
+</head>
+<body>
+    <script>
+        let No = parseInt(prompt("Enter any Number :-"));
+
+        if(No >=0 && No <=100){
+            if(No % 2==0){
+                document.writeln(`<h2> Number is in range & also is Even </h2>`)
+            }else{
+                document.writeln(`<h2> Number is in range but not  Even </h2>`)
+            }
+        }else{
+            if(No % 2 == 0){
+                document.writeln(`<h2>Number is in not  range but  is Even </h2>`)
+            }else{
+                document.writeln(`<h2>Number is in not  range & Even </h2>`)
+            }
+        }
+
+    </script>
+</body>
+</html>

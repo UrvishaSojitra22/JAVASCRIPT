@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Username and Password</title>
+</head>
+
+<body>
+    <script>
+        let Username = "urvi@123";
+        let Password = "0369";
+
+        let enterUsername = (prompt("Enters Username  :-"));
+        let enterPassword = (prompt("Enter Password :-"));
+
+
+        if (enterUsername == Username) {
+            if (enterPassword == Password) {
+                document.writeln(`<h2>Username & Password right</h2>`);
+            } else {
+                document.writeln(`<h2>password is wrong</h2>`);
+            }
+} else {
+            if (enterPassword == Password) {
+                document.writeln(`<h2>Username is wrong </h2>`);
+            } else {
+                document.writeln(`<h2> Username & Password  both wrong </h2>`);
+            }
+        }
+    </script>
+</body>
+
+</html>

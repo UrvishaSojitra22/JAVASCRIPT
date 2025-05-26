@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print fuel efficiency rating based on mileage</title>
+</head>
+<body>
+    <script>
+        let mileage  = parseInt (prompt("Enter mileage "));
+
+        if(mileage >=50){
+            document.writeln(`<h2>Excellent</h2>`)
+        }else if (mileage>=35){
+            document.writeln(`<h2>Good</h2>`)
+        }else if (mileage>=20){
+            document.writeln(`<h2>Average</h2>`)
+        }else {
+            document.writeln(`<h2>Average</h2>`)
+        }
+    </script>
+    
+</body>
+</html>

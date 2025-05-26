@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print ticket price based on age group (child, adult, senior)</title>
+</head>
+<body>
+    <script>
+        let age = parseInt(prompt("Enter your Age :- "));
+
+        if(age>=0 && age <=12){
+            document.writeln(`<h2>Child Ticket : Rs.100</h2>`);
+        }else if ( age >= 13 && age <=64  ){
+            document.writeln(`<h2>Adult Ticket : Rs.200</h2>`);
+        }else {
+            document.writeln(`<h2>Senior Ticket : Rs.150</h2>`);
+        }
+
+    </script>
+</body>
+</html>

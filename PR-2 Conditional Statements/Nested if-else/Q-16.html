@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Written and Practical Exams</title>
+</head>
+<body>
+    <script>
+        let  Practical = parseInt(prompt("Enter Practical Exam Marks :-"));
+        let  Written = parseInt(prompt("Enter Written Exam Marks :-"));
+
+     if(Practical>=35){
+        if(Written>=35){
+         document.writeln(`<h2>congratulatio...you pass both exam</h2>`);
+        }else
+        document.writeln(`<h2>Practical exam pass but written exam fail...!</h2>`);
+     }else {
+        if(Written>=35){
+            document.writeln(`<h2>written exam pass but Practical exam fail...!</h2>`);
+        }else
+        document.writeln(`<h2>sorry..! written & Practical both exam fail</h2>`);
+     }
+</script>
+</body>
+</html>

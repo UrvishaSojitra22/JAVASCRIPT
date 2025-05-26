@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Result (distinction, first class, pass, fail)</title>
+</head>
+<body>
+    <script>
+        let Marks = parseInt(prompt("Enter your marks :- "))
+
+
+        if(Marks<=100 && Marks >=90 ){
+            document.writeln(`<h2> congractulation...! you are pass with  first distinction.</h2>`);
+        }else if (Marks <=89 && Marks>=80 ){
+            document.writeln(`<h2> you are pass with distinction.</h2>`);
+        }else if (Marks<=79 && Marks>=70){
+            document.writeln(`<h2> you are pass with first class</h2>`);
+        }else if(Marks<=69 && Marks >=35 ){
+            document.writeln(`<h2> you are pass</h2>`)
+        }else{
+            document.writeln(`<h2>fail....!</h2>`)
+        }
+    </script>
+</body>
+</html>

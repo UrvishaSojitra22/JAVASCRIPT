@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Largest among three numbers</title>
+</head>
+
+<body>
+    <script>
+        let a = parseInt(prompt("Enter value A"));
+        let b = parseInt(prompt("Enter value B"));
+        let c = parseInt(prompt("Enter value C"));
+
+        if (a > b) {
+            if (a > c) {
+                document.writeln(`<h2>${a} A value is max </h2>`);
+
+            } else {
+                document.writeln(`<h2>${c} C value is max </h2>`);
+            }
+        } else {
+            if ((b > c)) {
+                document.writeln(`<h2>${b} B value is max </h2>`);
+            }else {
+                document.writeln(`<h2>${c} C value is max </h2>`);
+            }
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

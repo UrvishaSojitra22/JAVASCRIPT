@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width= , initial-scale= ">
+    <title> Blood Donation Eligibility based on Age and Weight.</title>
+</head>
+<body>
+     <script>
+        let age = parseInt(prompt("Enter your Age :- "));
+        let weight  = parseInt(prompt("Enter your weight :- "));
+
+         if(age>=18 && age<=65 ){
+            if(weight>=45){
+                document.writeln(`<h2>you are Eligibel to donet Blood</h2>`);
+            }else{
+                document.writeln(`<h2>you are Not Eligibel to donet Blood Becose You are under weight</h2>`);
+            }
+         }else{
+            if(age < 18 ){
+                document.writeln(`<h2>you are Not Eligibel to donet Blood Becose You are under age </h2>`)
+            }else{
+                document.writeln(`<h2>you are Not Eligibel to donet Blood Becose You are siniur </h2>`)
+            }
+
+         }
+    </script>
+</body>
+</html>

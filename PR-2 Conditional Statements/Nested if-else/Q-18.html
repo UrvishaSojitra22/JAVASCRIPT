@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character is a Letter, Digit, Symbo</title>
+</head>
+<body>
+    <script>
+        let char = prompt("Enter Letter, Digit, Symbol :- ");
+        let ch = char.charCodeAt(0);
+
+if(ch>=65 && ch <=90 || ch>=97 && ch<=122) {
+    document.writeln(`<h2>Character is a Letter </h2>`);
+   
+}else if (ch >= 48 && ch <=57 ){
+        document.writeln(`<h2>Character is a Digit </h2>`);
+
+}else{
+    document.writeln(`<h2>Character is a Symbol </h2>`)
+}
+    </script>
+</body>
+</html>

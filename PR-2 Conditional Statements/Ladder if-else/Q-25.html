@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Season Based on the Month Number</title>
+</head>
+
+<body>
+    <script>
+        let Month = parseInt(prompt("Enter Month:-"));
+
+        if (Month == 11 || Month == 12 || Month == 1 || Month == 2) {
+            document.writeln(`<h2>Winter Season</h2>`);
+        } else if (Month == 3 || Month == 4 || Month == 5 || Month == 6) {
+            document.writeln(`<h2>Summer Season</h2>`);
+        } else if (Month == 7 || Month == 8 || Month == 9 || Month == 10) {
+            document.writeln(`<h2>Monsoon Season</h2>`);
+        } else {
+            document.writeln(`<h2>You enter wrong Month</h2>`);
+        }
+</script>
+</body>
+
+</html>
