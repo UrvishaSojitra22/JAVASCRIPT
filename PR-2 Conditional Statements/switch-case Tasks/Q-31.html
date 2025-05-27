@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arithmetic Operations </title>
+</head>
+<body>
+    <script>
+        let No1  = parseFloat(prompt("Enter value A :-"))
+        let No2  = parseFloat(prompt("Enter value B:-"))
+        let operator  = (prompt("Enter value an operator (+,-,*,%):-"))
+        let result;
+
+        switch(operator ){
+            case '+':
+             result = No1+No2
+            document.writeln(`<h2>Addition of ${No1} & ${No2} :- ${result} </h2>`);
+            break;
+            case '-':
+            result = No1-No2;
+            document.writeln(`<h2>substaction of ${No1} & ${No2} :- ${result} </h2>`);
+            break;
+            case '*':
+            result = No1*No2; 
+            document.writeln(`<h2>Multiplication  of ${No1} & ${No2} :- ${result}</h2>`);
+            break;
+            case '%':
+            result = No1%No2;
+            document.writeln(`<h2>Modulo of ${No1} & ${No2} :- ${result} </h2>`);
+            break;  
+            
+            
+        }
+        
+
+    </script>
+</body>
+</html>
