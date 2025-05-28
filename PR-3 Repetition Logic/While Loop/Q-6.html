@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate the factorial of a number.</title>
+</head>
+
+<body>
+    <script>
+        let no = parseInt(prompt(`Enter value :-  `));
+        let fect = 1;
+
+         while (no >= 1) {
+            fect = fect * no;
+            no--;
+        }
+        document.writeln(`<h1>${fect}</h1>`);
+    </script>
+</body>
+
+</html>
