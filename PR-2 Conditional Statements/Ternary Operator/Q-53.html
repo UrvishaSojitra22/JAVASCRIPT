@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> student is eligible for a scholarship (based on GPA and income).
+</title>
+</head>
+<body>
+  <script>
+      let gpa = parseFloat(prompt("Enter your GPA:"));
+      let income = parseFloat(prompt("Enter your family income:")); 
+
+        (gpa >= 3.5 && income <= 40000)?
+      document.writeln(`<h1>Eligible for a Scholarship</h1>`):
+      document.writeln(`<h1>Not Eligible for a Scholarship</h1>`)
+  </script>   
+</body>
+</html>
