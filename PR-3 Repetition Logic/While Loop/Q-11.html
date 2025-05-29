@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check if a number is prime using a while loop.</title>
+</head>
+<body>
+    <script>
+        let n = parseInt(prompt("Enter a number to check if it is prime:"));
+        let i = 2;
+        let flag =0;
+
+        while(i<n){
+            if(n%i==0){
+                flag=1;
+                break
+            }else{
+                flag=0;
+            }
+            i++;
+        }
+        if ( flag==0){
+            document.writeln("<h1>prime</h1>");
+        }else{
+            document.writeln("<h1>not prime</h1>");
+        }
+    
+    </script>
+</body>
+</html>

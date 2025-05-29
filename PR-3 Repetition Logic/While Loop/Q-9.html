@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find the sum of the digits of a given number.</title>
+</head>
+    <body>
+    <script>
+        let no = parseInt(prompt("Enter your Digits :- "));
+        let sum = 0;
+        let digit;
+        while (no > 0) {
+            digit = no % 10;
+            sum = sum + digit;
+            no = Math.floor(no / 10);
+        }
+        document.writeln(`<h1> sum of the digits  :-${sum}<h1>`);
+        </script>
+    </body>
+</html>
