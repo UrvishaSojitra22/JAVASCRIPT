@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Count how many numbers are divisible by 3.</title>
+</head>
+<body>
+    <script>
+        let input = prompt("Enter numbers :-");
+        let arr = input.split(",").map(Number);
+        let Numbers = [];
+             for (let i = 0; i < arr.length; i++) {
+             if (arr[i] % 3 == 0) {
+               Numbers.push(arr[i]);
+               }
+            }
+         document.write("numbers are divisible by 3: " + Numbers.join(", "));
+    </script>
+</body>
+</html>
