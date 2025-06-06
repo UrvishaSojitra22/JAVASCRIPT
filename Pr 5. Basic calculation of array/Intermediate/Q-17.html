@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sort an array in descending order.</title>
+</head>
+<body>
+    <script>
+         let input = prompt("Enter numbers:");
+            let numbersArray = input.split(",").map(Number);
+
+        numbersArray.sort((a, b) => b - a);
+        document.writeln(`<h1>Sorted numbers in ascending order: ${numbersArray} </h1>`);
+    </script>
+</body>
+</html>
