@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Table</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #ffffff;
+      color: #000000;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    .controls {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .controls input,
+    .controls button {
+      padding: 8px;
+      margin: 5px;
+      font-size: 14px;
+      background-color: #f9f9f9;
+      border: 1px solid #ccc;
+      color: #000;
+    }
+
+    .controls input:focus,
+    .controls button:hover {
+      background-color: #efefef;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #ffffff;
+      color: #000000;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #f0f0f0;
+    }
+
+    tr:hover {
+      background-color: #f9f9f9;
+    }
+
+    #output {
+      margin-top: 20px;
+      font-family: monospace;
+      white-space: pre-wrap;
+      background-color: #fdfdfd;
+      padding: 10px;
+      border: 1px solid #ccc;
+      color: #000000;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Student Details</h2>
+
+  <div class="controls">
+    <input type="text" id="subjectFilter" placeholder="Filter by Subject">
+    <input type="text" id="nameSearch" placeholder="Search by Name">
+    <br>
+    <button onclick="sortByName()">Sort by Name</button>
+    <button onclick="sortByAge()">Sort by Age</button>
+    <button onclick="listNamesGrades()">List Names & Grades</button>
+    <button onclick="averageAge()">Average Age</button>
+    <button onclick="filterOlderThan18()">Age > 18</button>
+    <button onclick="gradeAMath()">Grade A & Math</button>
+  </div>
+
+  <table id="studentTable">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Grade</th>
+        <th>Subject</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <div id="output"></div>
+
+  <script>
+    const students = [
+      { id: 1, name: "Alice", age: 17, grade: "A", subject: "Math" },
+      { id: 2, name: "Bob", age: 18, grade: "B", subject: "English" },
+      { id: 3, name: "Charlie", age: 17, grade: "C", subject: "Science" },
+      { id: 4, name: "David", age: 19, grade: "A", subject: "History" },
+      { id: 5, name: "Eva", age: 18, grade: "B", subject: "Math" },
+      { id: 6, name: "Frank", age: 17, grade: "C", subject: "English" },
+      { id: 7, name: "Grace", age: 18, grade: "A", subject: "Science" },
+      { id: 8, name: "Hannah", age: 19, grade: "B", subject: "History" },
+      { id: 9, name: "Ian", age: 17, grade: "C", subject: "Math" },
+      { id: 10, name: "Jack", age: 18, grade: "A", subject: "English" },
+      { id: 11, name: "Karen", age: 19, grade: "B", subject: "Science" },
+      { id: 12, name: "Leo", age: 17, grade: "C", subject: "History" },
+      { id: 13, name: "Mia", age: 18, grade: "A", subject: "Math" },
+      { id: 14, name: "Nina", age: 19, grade: "B", subject: "English" },
+      { id: 15, name: "Oscar", age: 17, grade: "C", subject: "Science" },
+      { id: 16, name: "Pam", age: 18, grade: "A", subject: "History" },
+      { id: 17, name: "Quinn", age: 19, grade: "B", subject: "Math" },
+      { id: 18, name: "Rick", age: 17, grade: "C", subject: "English" },
+      { id: 19, name: "Sara", age: 18, grade: "A", subject: "Science" },
+      { id: 20, name: "Tom", age: 19, grade: "B", subject: "History" }
+    ];
+
+    const tableBody = document.querySelector("#studentTable tbody");
+    const output = document.getElementById("output");
+
+    function display(data) {
+      output.textContent = '';
+      tableBody.innerHTML = '';
+      data.forEach(s => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td>${s.id}</td>
+          <td>${s.name}</td>
+          <td>${s.age}</td>
+          <td>${s.grade}</td>
+          <td>${s.subject}</td>
+        `;
+        tableBody.appendChild(row);
+      });
+    }
+
+    function sortByName() {
+      const sorted = [...students].sort((a, b) => a.name.localeCompare(b.name));
+      display(sorted);
+    }
+
+    function sortByAge() {
+      const sorted = [...students].sort((a, b) => a.age - b.age);
+      display(sorted);
+    }
+
+    function listNamesGrades() {
+      const list = students.map(s => `${s.name} - Grade ${s.grade}`).join("\n");
+      output.textContent = list;
+      tableBody.innerHTML = '';
+    }
+
+    function averageAge() {
+      const avg = students.reduce((sum, s) => sum + s.age, 0) / students.length;
+      output.textContent = `Average Age: ${avg.toFixed(2)}`;
+      tableBody.innerHTML = '';
+    }
+
+    function filterOlderThan18() {
+      const filtered = students.filter(s => s.age > 18);
+      display(filtered);
+    }
+
+    function gradeAMath() {
+      const filtered = students.filter(s => s.grade === "A" && s.subject === "Math");
+      display(filtered);
+    }
+
+    function searchByName(name) {
+      const filtered = students.filter(s => s.name.toLowerCase().includes(name.toLowerCase()));
+      display(filtered);
+    }
+
+    function filterBySubject(subject) {
+      const filtered = students.filter(s => s.subject.toLowerCase().includes(subject.toLowerCase()));
+      display(filtered);
+    }
+
+    document.getElementById("nameSearch").addEventListener("input", e => {
+      searchByName(e.target.value);
+    });
+
+    document.getElementById("subjectFilter").addEventListener("input", e => {
+      filterBySubject(e.target.value);
+    });
+
+    // Initial display
+    display(students);
+  </script>
+
+</body>
+</html>
