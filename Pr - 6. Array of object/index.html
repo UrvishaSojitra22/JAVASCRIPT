@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pr 6. Array of object</title>
+</head>
+
+<body>
+       <h2 align="center" style="font-size: xxx-large;">Student Details</h2>
+    <div style="display: flex; justify-content: center;">
+     
+    <div align="left" style=" border: 1px  #dddddd;  margin-bottom: 10px; margin-right: 100px; ">
+
+        <button onclick="sortByName()"
+            style="padding: 15PX; text-transform: capitalize; font-size: large;margin-bottom: 10px;background-color: rgb(192, 216, 218);"> Sort students by
+            name:</button><br>
+        <button onclick="subjectFilter()"
+            style="padding: 15PX; text-transform: capitalize; font-size: large;margin-bottom: 10px; background-color: rgb(192, 216, 218);"> Filter students
+            by subject:</button>
+        <button onclick="subjectFilter('Science')" style="padding: 10px; background-color: rgb(193, 207, 207);">Scince</button>
+        <button onclick="subjectFilter('Math')" style="padding: 10px; background-color: rgb(193, 207, 207);">Math</button>
+        <button onclick="subjectFilter('History')" style="padding: 10px; background-color: rgb(193, 207, 207);">History</button>
+        <button onclick="subjectFilter('English')" style="padding: 10px; background-color: rgb(193, 207, 207);">English</button><br>
+        <button style="padding: 15PX; text-transform: capitalize; font-size: large;margin-bottom: 10px; background-color: rgb(192, 216, 218);"> List student
+            names and their grades:</button>
+        <button onclick="listNamesGrades('A')" style="padding: 10px; background-color: rgb(193, 207, 207);">A</button>
+        <button onclick="listNamesGrades('B')" style="padding: 10px; background-color: rgb(193, 207, 207);">B</button>
+        <button onclick="listNamesGrades('C')" style="padding: 10px; background-color: rgb(193, 207, 207);">C</button><br>
+        <button onclick="averageAge()"
+            style="padding: 15PX; text-transform: capitalize; font-size: large; margin-bottom: 10px;background-color: rgb(192, 216, 218);"> Get the average
+            age of all students:</button><br>
+        <button onclick="filterOlderThan18()"
+            style="padding: 15PX; text-transform: capitalize; font-size: large;margin-bottom: 10px; background-color: rgb(192, 216, 218);">Get students older
+            than 18 years:</button><br>
+        <button onclick="gradeAMath()"
+            style="padding: 15PX; text-transform: capitalize; font-size: large;margin-bottom: 10px; background-color: rgb(192, 216, 218);"> Find students with
+            grade 'A' and subject 'Math':</button><br>
+        <button onclick="sortByAge()"
+            style="padding: 15PX; text-transform: capitalize; font-size: large;margin-bottom: 10px; background-color: rgb(192, 216, 218);"> Sort students by
+            age:</button><br>
+        <button onclick="findStudentByName()"
+            style="padding: 15PX; text-transform: capitalize; font-size: large;margin-bottom: 10px; background-color: rgb(192, 216, 218);"> Create a function
+            to search for a student by name:</button>
+
+
+    </div>
+    <div>
+           <table align="center" border="1" cellpadding="20" cellspacing="0" style="background-color: rgb(210, 217, 218);" >
+        <thead style="background-color: rgb(169, 174, 175); font-weight: 900;">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Grade</th>
+                <th>Subject</th>
+            </tr>
+        </thead>
+        <tbody id="Record" ></tbody>
+    </table>
+    </div>
+
+ 
+    </div>
+    
+    <script>
+        const students = [
+            { id: 1, name: "Urvisha", age: 17, grade: "A", subject: "Math" },
+            { id: 2, name: "Hemngi", age: 18, grade: "B", subject: "English" },
+            { id: 3, name: "Dhrupal", age: 17, grade: "C", subject: "Science" },
+            { id: 4, name: "Rutvik", age: 19, grade: "A", subject: "History" },
+            { id: 5, name: "Heet", age: 18, grade: "B", subject: "Math" },
+            { id: 6, name: "Vansh", age: 17, grade: "C", subject: "English" },
+            { id: 7, name: "Raj", age: 18, grade: "A", subject: "Science" },
+            { id: 8, name: "Dixit", age: 19, grade: "B", subject: "History" },
+            { id: 9, name: "Priya", age: 17, grade: "C", subject: "Math" },
+            { id: 10, name: "Aditya", age: 18, grade: "A", subject: "English" },
+            { id: 11, name: "Rency", age: 19, grade: "B", subject: "Science" },
+            { id: 12, name: "Ridhhi", age: 17, grade: "C", subject: "History" },
+            { id: 13, name: "Anmol", age: 18, grade: "A", subject: "Math" },
+            { id: 14, name: "Manali", age: 19, grade: "B", subject: "English" },
+            { id: 15, name: "Princy", age: 17, grade: "C", subject: "Science" },
+            { id: 16, name: "Aryan", age: 18, grade: "A", subject: "History" },
+            { id: 17, name: "Nency", age: 19, grade: "B", subject: "Math" },
+            { id: 18, name: "Jeni", age: 17, grade: "C", subject: "English" },
+            { id: 19, name: "Adhya", age: 18, grade: "A", subject: "Science" },
+            { id: 20, name: "shruti", age: 19, grade: "B", subject: "History" }
+        ];
+
+
+        const getstudents = () => {
+            let tbl = "";
+            students.map((val, index) => {
+                tbl += `
+                <tr>
+                    <td>${val.id}</td>
+                    <td>${val.name}</td>
+                    <td>${val.age}</td>
+                    <td>${val.grade}</td>
+                    <td>${val.subject}</td>
+                    </tr>
+                `
+            });
+            document.getElementById("Record").innerHTML = tbl;
+
+        }
+        getstudents();
+        // 1. 🔍 Filter students by subject:
+
+        const subjectFilter = (subject) => {
+            let ans = students.filter((val) => {
+                return val.subject == subject;
+            }
+
+            )
+            let tbl = " ";
+            ans.map((val, index) => {
+                tbl += `
+    <tr>
+        <td>${val.id}</td>
+                    <td>${val.name}</td>
+                    <td>${val.age}</td>
+                    <td>${val.grade}</td>
+                    <td>${val.subject}</td>
+        </tr>`
+            }
+            )
+            document.getElementById("Record").innerHTML = tbl;
+        }
+
+
+        // 2. Sort students by
+        const sortByName = () => {
+            let tbl = "";
+            students.map((val, index) => {
+                tbl += `
+                <tr>
+                    <td>${val.id}</td>
+                    <td>${val.name}</td>
+                    <td>${val.age}</td>
+                    <td>${val.grade}</td>
+                    <td>${val.subject}</td>
+                    </tr>
+                `
+            });
+            document.getElementById("Record").innerHTML = tbl;
+
+        }
+        sortByName();
+
+
+        // 3. List student names and their grades:
+
+        const listNamesGrades = (grade) => {
+            let ans = students.filter((val) => {
+                return val.grade == grade;
+            }
+
+            )
+            let tbl = " ";
+            ans.map((val, index) => {
+                tbl += `
+    <tr>
+        <td>${val.id}</td>
+                    <td>${val.name}</td>
+                    <td>${val.age}</td>
+                    <td>${val.grade}</td>
+                    <td>${val.subject}</td>
+        </tr>`
+            }
+            )
+            document.getElementById("Record").innerHTML = tbl;
+        }
+
+        // 4.Get the average age of all students: 
+
+        const averageAge = () => {
+            let total = students.reduce((sum, student) => sum + student.age, 0);
+            let avg = total / students.length;
+            alert(`Average age of all students is: ${avg.toFixed(2)}`)
+           
+        }
+
+        // 5.Get students older than 18 years:        
+
+        const filterOlderThan18 = () => {
+            let filtered = students.filter(student => student.age > 18);
+            let tbl = "";
+            filtered.map((val) => {
+                tbl += `
+            <tr>
+                <td>${val.id}</td>
+                <td>${val.name}</td>
+                <td>${val.age}</td>
+                <td>${val.grade}</td>
+                <td>${val.subject}</td>
+            </tr>`;
+            });
+            document.getElementById("Record").innerHTML = tbl;
+        }
+
+
+        // 6.Find students with grade 'A' and subject 'Math'
+
+
+        const gradeAMath = () => {
+            let filtered = students.filter(student => student.grade === 'A' && student.subject === 'Math');
+            let tbl = "";
+            filtered.map((val) => {
+                tbl += `
+            <tr>
+                <td>${val.id}</td>
+                <td>${val.name}</td>
+                <td>${val.age}</td>
+                <td>${val.grade}</td>
+                <td>${val.subject}</td>
+            </tr>`;
+            });
+            document.getElementById("Record").innerHTML = tbl;
+        }
+
+
+        // 7.Sort students by age (ascending or descending):
+        const sortByAge = () => {
+            let sorted = [...students].sort((a, b) => a.age - b.age);
+            let tbl = "";
+            sorted.map((val) => {
+                tbl += `
+            <tr>
+                <td>${val.id}</td>
+                <td>${val.name}</td>
+                <td>${val.age}</td>
+                <td>${val.grade}</td>
+                <td>${val.subject}</td>
+            </tr>`;
+            });
+            document.getElementById("Record").innerHTML = tbl;
+        }
+
+
+        // 8.Create a function to search for a student by name
+
+        const findStudentByName = () => {
+            let name = prompt(parseInt("Enter the name of the student to search:"));
+            if (!name) return;
+            let filtered = students.filter(student => student.name.toLowerCase() === name.toLowerCase());
+
+            if (filtered.length === 0) {
+                document.getElementById("Record").innerHTML = `<tr><td colspan="5" style="text-align:center;">No student found with the name "${name}"</td></tr>`;
+                return;
+            }
+
+            let tbl = "";
+            filtered.map((val) => {
+                tbl += `
+        <tr>
+            <td>${val.id}</td>
+            <td>${val.name}</td>
+            <td>${val.age}</td>
+            <td>${val.grade}</td>
+            <td>${val.subject}</td>
+        </tr>`;
+            });
+
+            document.getElementById("Record").innerHTML = tbl;
+        }
+
+    </script>
+</body>
+
+</html>
