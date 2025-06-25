@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow function to calculate area of a triangle.</title>
+</head>
+<body>
+    <script>
+        let height = parseInt(prompt("Enter height velue :-"));
+        let width = parseInt(prompt("Enter width velue :-"));
+        let area;
+
+         const calculateArea = (width,height) => {
+            return height * width / 2;
+        };
+
+         area = calculateArea(width,height);
+        document.writeln(`<h1>area of a triangle: ${area}</h1>`);
+    </script>
+</body>
+</html>
