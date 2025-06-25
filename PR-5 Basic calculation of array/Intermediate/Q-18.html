@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find the first number greater than 50.</title>
+</head>
+<body>
+    <script>
+    let input = prompt("Enter numbers :");
+    let arr = input.split(",").map(Number);
+
+    let result = arr.find(function(num) {
+        return num > 50;
+    });
+
+    if (result != undefined) {
+        document.write(`<h1>First number greater than 50: ${result}</h1>`);
+    } else {
+        document.write(`<h1>No number greater than 50 found.</h1>`);
+    }
+</script>
+
+</body>
+</html>

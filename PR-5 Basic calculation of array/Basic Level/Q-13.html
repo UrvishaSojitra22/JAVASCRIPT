@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> A new array with only positive numbers.</title>
+</head>
+<body>
+    <script>
+        let numbers = [-10, 5, -3, 7, -1, 12, 0];
+         let positiveNumbers = [];
+
+        for (let i = 0; i < numbers.length; i++) {
+            if (numbers[i] > 0) {
+            positiveNumbers.push(numbers[i]);
+                }
+            }
+            document.writeln(`<h1> only positive numbers  : ${positiveNumbers}</h1>`)
+             
+    </script>
+</body>
+</html>

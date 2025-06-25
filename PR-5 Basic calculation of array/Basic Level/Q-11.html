@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check if all elements are greater than 5.</title>
+</head>
+<body>
+    <script>
+        let input = prompt("Enter numbers :-");
+    let arr = input.split(",").map(Number);
+    let filteredArr = arr.filter(function(num) {
+        return num <= 5;
+    });
+
+    document.write("Numbers ≤ 5  :-  " + filteredArr.join(", "));
+    </script>
+</body>
+</html>
