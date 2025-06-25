@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bank Account</title>
+</head>
+<body>
+    <script>
+        
+        class BankAccount {
+            constructor(accountNumber, balance = 0) {
+                this.accountNumber = accountNumber;
+                this.balance = balance;
+            }
+        deposit(amount) {
+                 this.balance += amount;
+                     document.writeln(`<h1>Deposited: ${amount}</h1>`)
+                }
+                 withdraw(amount) {
+             
+                    this.balance -= amount;
+                    
+                    document.writeln(`<h1>Withdrawn: ${amount}</h1>`);
+                     
+                
+            }
+            
+            displayBalance() {
+                console.log(`Account Balance: ${this.balance}`);
+                document.writeln(`<h1>Account Balance: ${this.balance}</h1>`);
+            }
+
+            
+            displayAccountInfo() {
+
+                  document.writeln(`<h1>Account No.: ${this.accountNumber}</h1>`);
+                    document.writeln(`<h1>Opening Balance: ${this.balance}</h1>`);
+                
+            }
+        }
+
+        
+        let accNo = prompt("Enter your Account Number:");
+        let openingBalance = parseFloat(prompt("Enter Opening Balance:"));
+        let depositAmount = parseFloat(prompt("Enter amount to deposit:"));
+        let withdrawAmount = parseFloat(prompt("Enter amount to withdraw:"));
+
+        
+        const myAccount = new BankAccount(accNo, openingBalance);
+
+        
+        myAccount.displayAccountInfo();
+        myAccount.deposit(depositAmount);
+        myAccount.withdraw(withdrawAmount);
+        myAccount.displayBalance();
+
+    </script>
+</body>
+</html>

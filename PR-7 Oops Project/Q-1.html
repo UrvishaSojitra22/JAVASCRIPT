@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Create two instances of the 'Person' class and display their details.</title>
+</head>
+<body>
+    <script>
+        class Person {
+        constructor(name, age , Country) {
+            if(name && age && Country) {
+                this.name = name;
+                this.age = age;
+                this.Country= Country;
+                } 
+             }
+            }
+        
+           const p1 = new Person("xyz", 25 , "India");
+           const p2 = new Person("pqr",20, "USA");
+           
+           console.log(p1); 
+           console.log(p2); 
+    </script>
+</body>
+</html>
