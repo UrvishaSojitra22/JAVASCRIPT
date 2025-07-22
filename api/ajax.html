@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2 id="total"></h2>
+    <h2 id="limit"></h2>
+    <h2 id="skip"></h2>
+    <table border="1">
+        <thead>
+            <th>Id</th>
+            <th>Title</th>
+            <th>body</th>
+            <th>tags</th>
+
+        </thead>
+        <tbody id="posts">
+
+        </tbody>
+    </table>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $.ajax({
+            method: 'GET',
+            url: `https://dummyjson.com/posts`,
+            success: function (res) {
+                console.log(res);
+                document.getElementById('total').innerHTML = `Total :- ${res.total}`
+                document.getElementById('limit').innerHTML = `Limit :- ${res.limit}`
+                document.getElementById('skip').innerHTML = `Skip :- ${res.skip}`
+            let tbl = "";
+            res.posts.map((p) => {
+                    tbl += `
+                                    <tr>
+                                    <td>${p.id}</td>
+                                    <td>${p.title}</td>
+                                    <td>${p.body}</td>
+                                    <td>
+                                    `
+                    p.tags.map((tag) => {
+                        tbl += `
+                     ${tag}
+                         `
+                        })
+                    tbl +=
+                        `</td>
+                                    </tr>
+                 `
+                })
+             document.getElementById('posts').innerHTML = tbl;
+            }
+        })
+
+    </script>
+
+</body>
+
+</html>

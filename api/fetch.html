@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch in Javascript</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <h2 id="limit"></h2>
+    <h2 id="skip"></h2>
+    <h2 id="total"></h2>
+
+    <table border="1">
+        <thead>
+            <th>ID</th>
+            <th>Brand</th>
+            <th>Images</th>
+            <th>Category</th>
+        </thead>
+        
+    
+    </table>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        fetch('https://dummyjson.com/products')
+        .then(res => res.json())
+        .then(data =>{
+            console.log(data)
+            document.getElementById('limit').innerHTML = `Limit :- ${data.limit}`
+            document.getElementById('skip').innerHTML = `Skip :- ${data.skip}`
+            document.getElementById('total').innerHTML = `Total :- ${data.total}`
+
+        })
+        
+
+    </script>
+</body>
+</html>
