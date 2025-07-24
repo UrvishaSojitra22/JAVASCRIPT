@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corona API - Medical Colleges</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .info-card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .info-card h2 {
+            margin: 10px 0;
+            font-size: 18px;
+            color: #444;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+        }
+
+        thead {
+            background-color: #6080a2;
+            color: white;
+            
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+            
+        }
+
+        @media (max-width: 768px) {
+            table, thead, tbody, th, td, tr {
+                display: block;
+            }
+
+            thead tr {
+                display: none;
+            }
+
+            tr {
+                margin-bottom: 15px;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                padding: 10px;
+                background-color: white;
+            }
+
+            td {
+                display: flex;
+                justify-content: space-between;
+                padding: 10px 5px;
+                border-bottom: 1px solid #eee;
+            }
+
+            td::before {
+                content: attr(data-label);
+                font-weight: bold;
+                color: #333;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Medical Colleges & COVID-19 Data</h1>
+
+    <div class="info-card">
+        <h2 id="admissionCapacity"></h2>
+        <h2 id="city"></h2>
+        <h2 id="hospitalBeds"></h2>
+        <h2 id="ownership"></h2>
+        <h2 id="state"></h2>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Admission Capacity</th>
+                <th>City</th>
+                <th>Hospital Beds</th>
+                <th>Ownership</th>
+                <th>State</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+            
+        </tbody>
+    </table>
+
+    <script>
+        fetch('https://api.rootnet.in/covid19-in/hospitals/medical-colleges')
+            .then(res => res.json())
+            .then(data => {
+                const colleges = data.data.medicalColleges;
+                const first = colleges[0];
+
+                document.getElementById('admissionCapacity').innerHTML = `Admission Capacity: ${first.admissionCapacity}`;
+                document.getElementById('city').innerHTML = `City: ${first.city}`;
+                document.getElementById('hospitalBeds').innerHTML = `Hospital Beds: ${first.hospitalBeds}`;
+                document.getElementById('ownership').innerHTML = `Ownership: ${first.ownership}`;
+                document.getElementById('state').innerHTML = `State: ${first.state}`;
+
+                let tableHTML = '';
+                colleges.forEach(college => {
+                    tableHTML += `
+                        <tr>
+                            <td data-label="Admission Capacity">${college.admissionCapacity}</td>
+                            <td data-label="City">${college.city}</td>
+                            <td data-label="Hospital Beds">${college.hospitalBeds}</td>
+                            <td data-label="Ownership">${college.ownership}</td>
+                            <td data-label="State">${college.state}</td>
+                        </tr>
+                    `;
+                });
+
+                document.getElementById('tableBody').innerHTML = tableHTML;
+            });
+    </script>
+
+</body>
+</html>
