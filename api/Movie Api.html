@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Api</title>
+</head>
+<body>
+    <div id="Movie"></div>
+    <script>
+        fetch(`https://api.tvmaze.com/search/shows?q="Sara"`)
+        .then((res) => res.json())
+        .then((data) => {
+            console.log(data);
+             let moviedata = "";
+               data.map((Movies) => {
+                moviedata +=`
+                <img src="${Movies.show.image.medium}"width="350" height="350" style="margin:10px;"/>
+                `
+            });
+            document.getElementById("Movie").innerHTML = moviedata;
+             })
+    </script>
+</body>
+</html>
