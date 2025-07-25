@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weather Api</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #8e9edb 0%, #70799e 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 80vh;
+    }
+
+    .weather-container {
+      background-color: #ffffff7c;
+      padding: 30px 25px;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(30, 28, 28, 0.323);
+      max-width: 700px;
+      width: 100%;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .weather-container h1 {
+      margin-bottom: 20px;
+      font-size: 42px;
+      color: #333;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      margin-bottom: 12px;
+      transition: border-color 0.3s;
+    }
+
+    input[type="text"]:focus {
+      outline: none;
+      border-color: #4a90e2;
+    }
+
+    button {
+      background-color: #2c64a4;
+      color: white;
+      padding: 10px 18px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #072035;
+    }
+
+    .weather-result {
+      margin-top: 20px;
+      font-size: 16px;
+    }
+
+    .weather-result img {
+      width: 90px;
+      height: 90px;
+      margin-bottom: 10px;
+    }
+
+    .weather-result h2 {
+      margin: 10px 0;
+      font-size: 22px;
+      color: #222;
+    }
+
+    .weather-result p {
+      margin: 4px 0;
+      font-size: 15px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div class="weather-container">
+    <h1>🌤️ Weather API</h1>
+    <input type="text" id="cityInput" placeholder="Enter city name" />
+    <button onclick="getWeather()">Get Weather</button>
+    <div id="Weather" class="weather-result">Enter a city to get started.</div>
+  </div>
+
+  <script>
+    const API_KEY = `14951c93f3d11e8ac8bed96dd90e8bc7`;
+
+    function getWeather() {
+      const city = document.getElementById("cityInput").value.trim();
+      const weatherDiv = document.getElementById("Weather");
+
+      if (!city) {
+        weatherDiv.innerHTML = "❗ Please enter a city name.";
+        return;
+      }
+
+      weatherDiv.innerHTML = "🔄 Loading weather...";
+
+      fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`)
+        .then((res) => {
+          if (!res.ok) throw new Error("City not found");
+          return res.json();
+        })
+        .then((data) => {
+          const iconCode = data.weather[0].icon;
+          const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
+
+          const Weatherdata = `
+            <img src="${iconUrl}" alt="Weather icon" />
+            <h2>${data.name}</h2>
+            <p><strong>${data.weather[0].main}</strong> - ${data.weather[0].description}</p>
+            <p>🌡️ Temp: ${data.main.temp} °C</p>
+            <p>💧 Humidity: ${data.main.humidity}%</p>
+            <p>🌬️ Wind: ${data.wind.speed} m/s</p>
+          `;
+
+          weatherDiv.innerHTML = Weatherdata;
+        })
+        
+    }
+  </script>
+</body>
+</html>
